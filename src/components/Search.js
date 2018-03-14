@@ -20,7 +20,7 @@ class Search extends Component {
       headers: {
         'X-Zomato-API-Key': '2bf0938598b00170a5617b2c9ffffba8' //only allowed non-standard header
       },
-      url: `https://developers.zomato.com/api/v2.1/search?lat=${lat}&lon=${lon}`, //what do you want
+      url: `https://developers.zomato.com/api/v2.1/search?lat=${lat}&lon=${lon}&cuisines=${inputSearch}&sort=real_distance`, //what do you want
       dataType: 'json', //wanted response data type - let jQuery handle the rest...
       /*data: {
          //could be directly in URL, but this is more pretty, clear and easier to edit
