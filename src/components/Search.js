@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Restaurants from './Restaurants'
+import SweetAlert from 'sweetalert-react'; // eslint-disable-line import/no-extraneous-dependencies
+import 'sweetalert/dist/sweetalert.css';
 
 
 class Search extends Component {
@@ -10,32 +12,30 @@ class Search extends Component {
   handleChange = (e) => {
     this.setState({inputSearch: e.target.value});
   }
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(Restaurants.state)
-    /*const inputSearch = this.state.inputSearch;
-    let lat = '-33.418853299999995';
-    let lon = '-70.6423247';*/
 
-    /*console.log(inputSearch)
-    $.ajax({
-      type: "GET", //it's a GET request API
-      headers: {
-        'X-Zomato-API-Key': '2bf0938598b00170a5617b2c9ffffba8' //only allowed non-standard header
-      },
-      url: `https://developers.zomato.com/api/v2.1/search?lat=${lat}&lon=${lon}&cuisines=${inputSearch}&sort=real_distance`, //what do you want
-      dataType: 'json', //wanted response data type - let jQuery handle the rest...
-      data: {
-         //could be directly in URL, but this is more pretty, clear and easier to edit
-         cuisine_id: inputSearch,
-         
-      },
-      processData: true, //data is an object => tells jQuery to construct URL params from it
-      success: function(data) {
-        console.log(data); //what to do with response data on success
-      }
-    });*/
+
+handleSubmit=(e) => {
+
+    e.preventDefault()
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('user-key', '57800fe3a17bc04ca2e40cfb5cf036fc');
+    let options = {
+      method: 'GET',
+      headers: headers
+    };
+    const {inputSearch} = this.state
+    let url = `https://developers.zomato.com/api/v2.1/search?q=${inputSearch}&lat=-33.4331797&lon=-70.64590470000002`
+    window.fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+      const {results} = data;
+      console.log(results)
+      this.props.onResults(results)
+    })
   }
+  
+  
   render() {
     return(
       <form onSubmit = {this.handleSubmit}>
@@ -44,8 +44,10 @@ class Search extends Component {
           <button className="btn">Buscar</button>
         </div>
       </form>
+
     )
   }
+
 }
 
-export default Search
+export default Search;

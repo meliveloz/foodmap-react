@@ -26,7 +26,7 @@ class RestaurantsItems extends Component {
             <p><strong>Dirección:</strong> {this.props.restaurants.location.address}</p>
           </div>
           <div className="card-read-more">
-            <a href={this.props.restaurants.url} className="btn btn-link btn-block"> Read More </a>
+            <a href={this.props.restaurants.url} className="btn btn-link btn-block"> Ver en Zomato </a>
           </div>
         </div>
       </div>

@@ -54,7 +54,7 @@ h1.heading {
   }
 } 
 .card {
- 
+  min-height: 70vh;
   display: block; 
   margin-bottom: 20px;
   line-height: 1.42857143;
