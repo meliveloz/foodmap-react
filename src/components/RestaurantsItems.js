@@ -16,7 +16,8 @@ class RestaurantsItems extends Component {
     return (
       <div className="col-xs-12 col-sm-4 col-lg-3 controlHeight">
         <div className="card">               
-          <img className="img-responsive" src={this.checkImages(this.props)} />
+          <div className="img-container" style={{backgroundImage: `url(${this.checkImages(this.props)})`}}></div>            
+          {/*<img className="img-responsive" src={this.checkImages(this.props)} />*/}
           <div className="card-content">
             <h4 className="card-title">
              <em> {this.props.restaurants.name} </em>

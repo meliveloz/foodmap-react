@@ -54,7 +54,6 @@ h1.heading {
   }
 } 
 .card {
-  min-height: 70vh;
   display: block; 
   margin-bottom: 20px;
   line-height: 1.42857143;
@@ -66,7 +65,7 @@ h1.heading {
 .card:hover {
   box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.img-card {
+/*.img-card {
   width: 100%;
   height:200px;
   border-top-left-radius:2px;
@@ -79,10 +78,10 @@ h1.heading {
   height: 200px;
   object-fit:cover; 
   transition: all .25s ease;
-} 
+} */
 .card-content {
   padding:15px;
-  text-align:left;
+  text-align: left;
 }
 .card-title {
   margin-top:0px;
@@ -104,4 +103,9 @@ h1.heading {
 }
 .controlHeigh{
   min-height: 550px;
+}
+.img-container{
+  height: 180px;
+  background-size: cover;
+  background-position: center;
 }
