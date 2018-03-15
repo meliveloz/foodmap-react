@@ -9,7 +9,6 @@ class Restaurants extends Component {
       nearbyRestaurantArray:[]
     }
   }
-
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
