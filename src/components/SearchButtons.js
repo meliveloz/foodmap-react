@@ -21,9 +21,10 @@ class SearchButtons extends Component {
     window.fetch(url, options)
     .then(response => response.json())
     .then(data => {
-      data.cuisines.map(element => {
-        console.log(element.cuisine.cuisine_name)
-      })
+
+      const {results} = data.cuisines;
+      this.props.onResults(results)
+      
     })
   }
   render() {
