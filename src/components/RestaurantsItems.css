@@ -33,6 +33,7 @@
   text-decoration: none !important;
 }
 .card-read-more {
+  transition:ease all 0.5s;
   border-top: 1px solid #D4D4D4;
   background-color: #F88E28;
   height: 3em;
