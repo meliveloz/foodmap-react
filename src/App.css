@@ -26,3 +26,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.user-photo{
+  border-radius: 50%;
+  width: 5%;
+  display: inline-block;
+
+}
+.user-name{
+  display: inline-block;
+  padding-right: 1em;
+}
+.login{
+  padding:1em;
+}
