@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import Search from './components/Search';
 import Restaurants from './components/Restaurants.js';
 import Footer from './components/Footer'
-import { renderToStaticMarkup } from 'react-dom/server';
-import SweetAlert from 'sweetalert-react'; // eslint-disable-line import/no-extraneous-dependencies
-import 'sweetalert/dist/sweetalert.css';
+
+
 import './App.css';
-import Alert from './components/Alert.js';
+
 import firebase from 'firebase';
 
 class App extends Component {
@@ -37,15 +36,28 @@ class App extends Component {
   renderLoginButton(){
     if(this.state.user){
       return(
-        <div className="login">
-         <img className="img-responsive user-photo"src={this.state.user.photoURL} alt={this.state.user.displayName} />
-         <p className="user-name">Bienvenid@ {this.state.user.displayName}</p>
-         <button onClick={this.handleLogout} > Logout</button> 
-         </div>
-        );
+        <nav className="login navbar-fixed-top">
+          <div className="container">
+            <div className="pull-right user-container">
+              <div className="user-name-container">
+                <p className="welcome">Bienvenid@</p>
+                <p className="user-name">{this.state.user.displayName}</p>
+                <a className="logout-btn" onClick={this.handleLogout} > Logout</a>
+              </div>
+              <img className="img-responsive user-photo"src={this.state.user.photoURL} alt={this.state.user.displayName} />
+            </div>
+          </div>
+        </nav>
+      );
     }else{
       return(
-      <button onClick={this.handleAuth}>Login Google</button>
+        <nav className="login clearfix navbar-fixed-top">
+          <div className="container">
+            <div className="pull-right user-container">
+              <button className="login-btn" onClick={this.handleAuth}>Login Google</button>
+            </div>
+          </div>
+        </nav>
       );
     }
   }
@@ -54,16 +66,6 @@ class App extends Component {
     return(
       <div>
         { this.renderLoginButton() }
-        <div>
-          <button onClick={() => this.setState({ show: true })}>Condiciones de uso</button>
-          <SweetAlert
-            show={this.state.show}
-            title="Condiciones de Uso"
-            html
-            text={renderToStaticMarkup(<Alert />)}
-            onConfirm={() => this.setState({ show: false })}
-          />
-        </div>
         <Search />
         <div className="container main-container">
           <div className="row">

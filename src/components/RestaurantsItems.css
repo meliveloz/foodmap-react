@@ -65,15 +65,15 @@
 }
 .cuisines-types{
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
   background-color: #2B898B;
   margin-bottom: 1em;
   color: #FFF;
   text-align: center;
   padding: 0.1em 1em;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .address-style {
   margin: 0;
-  font-size: 1em;
+  font-size: 1.05em;
   font-family: 'Roboto Condensed', sans-serif;
 }

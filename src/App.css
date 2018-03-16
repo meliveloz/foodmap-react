@@ -26,17 +26,51 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+.login-btn {
+  border: none;
+  padding: 0.5em;
+  background-color: #2B898B;
+  transition: ease all 0.5s;
+}
+.login-btn:hover {
+  background-color: #F8B735;
+  color: #213037;
+}
 .user-photo{
   border-radius: 50%;
-  width: 5%;
+  width: 3.5em;
+  margin: 0.2em;
   display: inline-block;
-
 }
-.user-name{
+.user-name-container {
   display: inline-block;
-  padding-right: 1em;
+  vertical-align: middle;
+  padding: 0 1.5em;
+  text-align: right;
 }
-.login{
-  padding:1em;
+.user-name-container p {
+  margin: 0;
+}
+.welcome {
+  font-family: 'Roboto', sans-serif;
+  color: #1B999B;
+}
+.user-name {
+}
+.logout-btn {
+  color: #1B999B;
+}
+.logout-btn:hover {
+  color: #F88E28;
+  text-decoration: none;
+  cursor: pointer;
+}
+.login {
+  padding: 1em;
+  background-color:  #213037;
+  color: #FFF;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.user-container {
+  display: inline-block;
 }
