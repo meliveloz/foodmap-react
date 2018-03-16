@@ -53,10 +53,8 @@ class Restaurants extends Component {
     }
     // renderiza la variable que creamos
     return (
-      <div >
-        <div className="row">
-          {nearRestaurants}
-        </div>
+      <div id="restaurantsRender">
+        {nearRestaurants}
       </div>
     );
   }
