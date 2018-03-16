@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import HeaderBanner from './components/HeaderBanner';
 import Search from './components/Search';
 import Restaurants from './components/Restaurants.js';
 import Footer from './components/Footer'
@@ -66,6 +67,7 @@ class App extends Component {
     return(
       <div>
         { this.renderLoginButton() }
+        <HeaderBanner />
         <Search />
         <div className="container main-container">
           <div className="row">

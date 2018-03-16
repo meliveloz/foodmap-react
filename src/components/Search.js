@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RestaurantsItems from './RestaurantsItems';
+import './Search.css'
 
 class Search extends Component {
   state = {
@@ -61,13 +62,19 @@ class Search extends Component {
           <div className="col-xs-12">
             <form onSubmit = {this.handleSubmit}>
               <div className="input-append">
-                <input onChange={this.handleChange} type="text" className="span2" placeholder="¿Qué andas buscando?" />
-                <button className="btn">Buscar</button>
+                <div className="row">
+                  <div className="col-xs-12 col-sm-8 col-md-10 col-lg-10 no-padding-right">
+                    <input onChange={this.handleChange} type="text" className="search-input" placeholder="¿Qué andas buscando?" />
+                  </div>
+                  <div className="col-xs-12 col-sm-4 col-md-2 col-lg-2 no-padding-left">
+                    <button className="search-btn">Buscar</button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
-        <div>
+        <div className="row">
           {searchedRestaurants}
         </div>
       </div>
