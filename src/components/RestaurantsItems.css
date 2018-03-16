@@ -37,6 +37,7 @@
   border-top: 1px solid #D4D4D4;
   background-color: #F88E28;
   height: 3em;
+  transition: ease all 0.5s;
 }
 .card-read-more:hover {
   border-top: 1px solid #D4D4D4;
@@ -49,7 +50,6 @@
   text-transform: uppercase;
   color: #FFF;
   letter-spacing: 0.2em;
-  transition: all ease 0.5s;
   font-size: 1.1em;
 }
 .card-read-more a:hover {

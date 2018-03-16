@@ -6,7 +6,7 @@ class RestaurantsItems extends Component {
     let img = props.restaurants.featured_image;
     // si el key está vacío, elige una imagen random de unsplash
     if(img === '') {
-      return "https://source.unsplash.com/500x300/?cuisine"
+      return props.image;
     } else {
       // si no, muestra la imagen de la api
       return img

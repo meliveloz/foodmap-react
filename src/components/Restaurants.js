@@ -42,12 +42,16 @@ class Restaurants extends Component {
   render() {
     // crea una variable vacía que se llena con un restaurantItem por cada restaurant
     let nearRestaurants;
+    let randomImageNames = ["cuisine", "dishes", "food", "delicious", "restaurant", "gourmet", "foodies", "meat","bread", "fruit", "pizza", "burguer", "juice", "coke", "salad", "snack", "drink", "coffee", "cheese", "tea"];
+    let randomImage;
+
     // Si el estado de nearbyRestaurantArray existe, retorna un item por cada restaurante
     if( this.state.nearbyRestaurantArray){
       nearRestaurants = this.state.nearbyRestaurantArray.map(listOfRestaurants => {
+        randomImage = randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)]
         return(
           // entrega a cada item la propiedad de su restaurante, para que lo renderice en su componente
-          <RestaurantsItems  key={listOfRestaurants.restaurant.R.res_id} restaurants={listOfRestaurants.restaurant} />
+          <RestaurantsItems image={`https://source.unsplash.com/500x300/?${randomImage}`} key={listOfRestaurants.restaurant.R.res_id} restaurants={listOfRestaurants.restaurant} />
         )
       })
     }
