@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 
 class Search extends Component {
@@ -35,12 +34,18 @@ class Search extends Component {
   }
   render() {
     return(
-      <form onSubmit = {this.handleSubmit}>
-        <div className="input-append">
-          <input onChange={this.handleChange} type="text" className="span2"  size="120"placeholder="¿Qué andas buscando?" />
-          <button className="btn">Buscar</button>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            <form onSubmit = {this.handleSubmit}>
+              <div className="input-append">
+                <input onChange={this.handleChange} type="text" className="span2" placeholder="¿Qué andas buscando?" />
+                <button className="btn">Buscar</button>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
+      </div>
     )
   }
 }

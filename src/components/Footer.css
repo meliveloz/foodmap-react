@@ -1,0 +1,15 @@
+footer{
+  text-align: center;
+  background-color: #213037;
+  padding: 2em;
+  margin: 3em 0 0;
+}
+footer p {
+  margin: 0;
+  color: #FFF;
+}
+.heart {
+  color: #ff5778;
+  font-size: 1.3em;
+  vertical-align: middle;
+}

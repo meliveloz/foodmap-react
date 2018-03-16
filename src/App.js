@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Search from './components/Search';
 import Restaurants from './components/Restaurants.js';
+import Footer from './components/Footer'
 import { renderToStaticMarkup } from 'react-dom/server';
 import SweetAlert from 'sweetalert-react'; // eslint-disable-line import/no-extraneous-dependencies
 import 'sweetalert/dist/sweetalert.css';
@@ -23,7 +24,6 @@ class App extends Component {
     })
   }
   handleAuth(){
-
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
     .then(result => console.log(`${result.user.email}  ha iniciado sesión `))
@@ -51,27 +51,26 @@ class App extends Component {
   }
 
   render() {
-
     return(
-      <div className="container">
-      { this.renderLoginButton() }
       <div>
-        <button onClick={() => this.setState({ show: true })}>Condiciones de uso</button>
-        <SweetAlert
-          show={this.state.show}
-          title="Condiciones de Uso"
-          html
-          text={renderToStaticMarkup(<Alert />)}
-          onConfirm={() => this.setState({ show: false })}
-        />
-      </div>
+        { this.renderLoginButton() }
+        <div>
+          <button onClick={() => this.setState({ show: true })}>Condiciones de uso</button>
+          <SweetAlert
+            show={this.state.show}
+            title="Condiciones de Uso"
+            html
+            text={renderToStaticMarkup(<Alert />)}
+            onConfirm={() => this.setState({ show: false })}
+          />
+        </div>
         <Search />
-        <br></br>
-          
-            <div className="row">
-              <Restaurants />
-            </div>
-          
+        <div className="container main-container">
+          <div className="row">
+            <Restaurants />
+          </div>
+        </div>
+        <Footer />
       </div>
     );
   }
