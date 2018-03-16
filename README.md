@@ -23,7 +23,7 @@ El proyecto fue realizado con las siguientes dependencias:
   -sweetalert-react: ^0.4.11
 
 ### Uso
-+ Ingresa a [Foodies](meliveloz.github.io/foodmap-react)
++ Ingresa a [Foodies](https://meliveloz.github.io/foodmap-react)
 + Heroku [Foodies](https://fathomless-retreat-74717.herokuapp.com/)
 
 ### Ejemplo
